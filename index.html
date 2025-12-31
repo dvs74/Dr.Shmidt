@@ -773,22 +773,7 @@
     <!-- Рабочая форма -->
     <div class="row justify-content-center mt-5">
       <div class="col-lg-8">
-        <form action="https://script.google.com/macros/s/AKfycbwqy-e0SB-QZj6f5z8L9yL9kAP7OWRbhtotB2-zZnn91uddwSMNeoXBLCuWdMPKje53kg/exec" method="POST">
-          <div class="row">
-            <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" placeholder="Ваше имя" required>
-            </div>
-            <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="tel" name="phone" class="form-control" placeholder="Ваш телефон" required>
-            </div>
-          </div>
-          <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Опишите проблему" required></textarea>
-          </div>
-          <div class="text-center mt-3">
-            <button type="submit" class="btn btn-primary">Отправить заявку</button>
-          </div>
-        </form>
+        <form action="https://script.google.com/macros/s/AKfycbwqy-e0SB-QZj6f5z8L9yL9kAP7OWRbhtotB2-zZnn91uddwSMNeoXBLCuWdMPKje53kg/exec" method="POST" id="contact-form"> <input type="text" name="name" placeholder="Ваше имя" required> <input type="text" name="phone" placeholder="Телефон" required> <textarea name="message" placeholder="Ваше сообщение"></textarea> <button type="submit">Отправить</button> </form> <div id="form-status"></div>
       </div>
     </div>
   
@@ -855,5 +840,27 @@
 
     <!-- Main Javascript File -->
     <script src="js/main.js"></script>
+    <script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: data,
+        mode: 'no-cors'
+    })
+    .then(() => {
+        document.getElementById('form-status').innerText = "Заявка отправлена!";
+        form.reset();
+    })
+    .catch(() => {
+        document.getElementById('form-status').innerText = "Ошибка отправки.";
+    });
+});
+</script>
+
   </body>
 </html>
