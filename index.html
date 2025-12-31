@@ -475,26 +475,38 @@
     <!-- Рабочая форма -->
     <div class="row justify-content-center mt-5">
       <div class="col-lg-8">
-<form action="https://script.google.com/macros/s/AKfycbzeo_CM7m-BkIt-cnn8pYXuDXMDu3hsaxK2TB64ioUPWgkcRjZ9r4IbUWI8-LUgg6R1Dw/exec"method="POST">
 
+        <form action="https://script.google.com/macros/s/AKfycbzeo_CM7m-BkIt-cnn8pYXuDXMDu3hsaxK2TB64ioUPWgkcRjZ9r4IbUWI8-LUgg6R1Dw/exec" method="POST">
 
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <input type="text" name="name" class="form-control" placeholder="Ваше имя" required>
+    </div>
+    <div class="col-md-6 form-group mt-3 mt-md-0">
+      <input type="tel" name="phone" class="form-control" placeholder="Ваш телефон" required>
+    </div>
+  </div>
 
+  <div class="form-group mt-3">
+    <textarea class="form-control" name="message" rows="5" placeholder="Опишите проблему" required></textarea>
+  </div>
 
-          <div class="row">
-            <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" placeholder="Ваше имя" required>
-            </div>
-            <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="tel" name="phone" class="form-control" placeholder="Ваш телефон" required>
-            </div>
-          </div>
-          <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Опишите проблему" required></textarea>
-          </div>
-          <div class="text-center mt-3">
-            <button type="submit" class="btn btn-primary">Отправить заявку</button>
-          </div>
-        </form>
+  <!-- Чекбокс согласия -->
+  <div class="form-check mt-3 mb-3">
+    <input class="form-check-input" type="checkbox" id="agree" required>
+    <label class="form-check-label" for="agree">
+      Я даю согласие на обработку персональных данных и принимаю
+      <a href="/politika-personalnyh-dannyh.html" target="_blank">
+        Политику обработки персональных данных
+      </a>.
+    </label>
+  </div>
+
+  <div class="text-center mt-3">
+    <button type="submit" class="btn btn-primary">Отправить заявку</button>
+  </div>
+</form>
+
       </div>
     </div>
   </div>
@@ -505,25 +517,29 @@
       <!-- Subscriber Section Start -->
       <section id="subscriber">
         <div class="container">
-          <h3>Get Free Consultation</h3>
-          <form class="form-inline">
-            <div class="form-group">
-              <input
-                type="email"
-                class="form-control"
-                placeholder="Your Email Goes Here"
-              />
-            </div>
-            <button type="submit" class="btn">Submit</button>
-          </form>
+          <h3>Получить бесплатную консультацию</h3>
+          <form class="d-flex justify-content-center align-items-center flex-wrap gap-2 mt-3">
+  <input
+    type="email"
+    class="form-control"
+    placeholder="Электронная почта"
+    style="max-width: 300px;"
+    required
+  />
+<button type="submit" class="btn btn-primary d-flex justify-content-center align-items-center">
+  Отправить
+</button>
+
+</form>
         </div>
       </section>
+      
       <!-- Subscriber Section end -->
 
       <!-- Support Section Start -->
       <section id="support">
         <div class="container">
-          <h1>Need help? Call me 24/7 at +1-234-567-8900</h1>
+          <h1>Нужна помощь? Звоните круглосуточно +7-499-450-7677</h1>
         </div>
       </section>
       <!-- Support Section end -->
@@ -534,7 +550,7 @@
       <div class="container">
         <div class="copyright">
           <p>
-            &copy; Copyright <a href="#">Your Site Name</a>. All Rights Reserved
+            &copy; Copyright <a href="#">Шмидт В.А.</a>. All Rights Reserved
           </p>
 
           <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
