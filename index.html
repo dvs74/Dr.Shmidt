@@ -724,67 +724,76 @@
     </div>
   </div> -->
   <!-- Твоя форма (добавь required к телефону) -->
-   <div class="row justify-content-center mt-5">
+   <!-- Contact Section Start -->
+<section id="contact" class="contact section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h3>Контакты</h3>
+      <p>Круглосуточная анонимная помощь нарколога на дому</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="info-box mb-4">
+          <i class="bi bi-geo-alt"></i>
+          <h3>Выезд по Москве и Московской области</h3>
+          <p>Приезжаем к вам в течение 30 минут</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="info-box mb-4">
+          <i class="bi bi-telephone-fill"></i>
+          <h3>Телефон</h3>
+          <p><a href="tel:+74994507677">+7 (499) 450-76-77</a></p>
+          <p>Звонок круглосуточно</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="info-box mb-4">
+          <i class="bi bi-telegram"></i>
+          <h3>Telegram</h3>
+          <p><a href="https://t.me/DrShmidtBot" target="_blank">@DrShmidtBot</a></p>
+          <p>Напишите — ответим в течение 5 минут</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Кнопки -->
+    <div class="text-center mt-5">
+      <a href="tel:+74994507677" class="btn btn-primary btn-lg me-3">
+        <i class="bi bi-telephone-fill me-2"></i> Позвонить сейчас
+      </a>
+      <a href="https://t.me/DrShmidtBot" target="_blank" class="btn btn-outline-primary btn-lg">
+        <i class="bi bi-telegram me-2"></i> Написать в Telegram
+      </a>
+    </div>
+
+    <!-- Рабочая форма -->
+    <div class="row justify-content-center mt-5">
       <div class="col-lg-8">
-<form id="contactForm" onsubmit="return sendToTelegram(event)">
-  <div class="row">
-    <div class="col-md-6 form-group">
-      <input type="text" name="name" id="name" class="form-control" placeholder="Ваше имя" required>
+        <form action="https://script.google.com/macros/s/AKfycbyba7fU7sYA6LsZvgMrAeemOD99qe4Lmqdy9GW1hzTPc-HSXL7AZmmmixC2wSR8IF53NA/exec" method="POST">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" placeholder="Ваше имя" required>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="tel" name="phone" class="form-control" placeholder="Ваш телефон" required>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Опишите проблему" required></textarea>
+          </div>
+          <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="col-md-6 form-group mt-3 mt-md-0">
-      <input type="tel" name="phone" id="phone" class="form-control" placeholder="Ваш телефон" required>
-    </div>
-  </div>
-  <div class="form-group mt-3">
-    <textarea class="form-control" name="message" rows="5" placeholder="Опишите проблему" required></textarea>
-  </div>
-  <div class="text-center mt-3">
-    <button type="submit" class="btn btn-primary">Отправить заявку</button>
-  </div>
-</form>
-<!-- https://script.google.com/macros/s/AKfycbyba7fU7sYA6LsZvgMrAeemOD99qe4Lmqdy9GW1hzTPc-HSXL7AZmmmixC2wSR8IF53NA/exec -->
-<!-- Скрипт для отправки в Telegram -->
-<!-- <script>
-function sendToTelegram(event) {
-  event.preventDefault();
-
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const message = document.getElementById('message').value || 'Без сообщения';
-
-  const botToken = '123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11'; // ТВОЙ ТОКЕН от BotFather
-  const chatId = '5962269674'; // ТВОЙ chat_id от @userinfobot
-
-  const text = `Новая заявка!\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message}`;
-
-  const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
-
-  fetch(url)
-    .then(response => {
-      if (response.ok) {
-        alert('Заявка отправлена! Мы свяжемся в ближайшее время.');
-        document.getElementById('contactForm').reset(); // Очистка формы
-      } else {
-        alert('Ошибка отправки. Попробуйте позже.');
-      }
-    })
-    .catch(error => {
-      console.error('Ошибка:', error);
-      alert('Не удалось отправить. Проверьте интернет.');
-    });
-
-  return false; // Не перезагружать страницу
-}
-</script> -->
-<form id="contactForm" action="https://script.google.com/macros/s/AKfycbyba7fU7sYA6LsZvgMrAeemOD99qe4Lmqdy9GW1hzTPc-HSXL7AZmmmixC2wSR8IF53NA/exec" method="POST">
-  <!-- все поля остаются -->
-  <input type="text" name="name" placeholder="Имя" required>
-  <input type="tel" name="phone" placeholder="Ваш телефон" required>
-  <textarea name="message" placeholder="Сообщение"></textarea>
-  <button type="submit">Отправить</button>
-</form>
-
-      </section>
+  
+  </section>
+<!-- Contact end -->
       <!-- Contact end -->
 
       <!-- Subscriber Section Start -->
