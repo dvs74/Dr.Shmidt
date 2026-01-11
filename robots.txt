@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /vendor/
+Disallow: /css/
+Disallow: /js/
+Disallow: /img/
+Allow: /img/*.jpg
+Allow: /img/*.jpeg
+Allow: /img/*.png
+Allow: /img/*.webp
+
+Allow: /
+
+Sitemap: https://zapoy-help24.ru/sitemap.xml
+Host: zapoy-help24.ru
